@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <div className="flex items-center pl-20 pt-28">
+      <div className="flex items-center justify-center pl-20 pt-28">
         <div className="flex-col max-w-[634px] space-y-6">
           <h1 className="text-4xl font-bold text-[#1A1A1A]">
             Embark on a Journey to Inner Peace and Resilience
@@ -28,7 +28,7 @@ export default function Home() {
         <div>
           <Image src="/meditation.png" alt="meditation" width={500} height={500} />
         </div>
-        
+
       </div>
     </div>
   );
