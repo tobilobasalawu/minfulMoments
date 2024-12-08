@@ -1,41 +1,64 @@
+import React, { useState } from 'react';
+
 const Selection = () => {
-  return (
-    <div>
-      <nav className="navbar">
-        <button className="nav-button active">Sleep</button>
-        <button className="nav-button">Stress</button>
-        <button className="nav-button">Anxiety</button>
-        <button className="nav-button">Sleep</button>
-        <button className="nav-button">Sleep</button>
-      </nav>
-    </div>
-  );
-}
+    const [activeButton, setActiveButton] = useState('Sleep');
 
-// Add CSS styles for the navbar
-const styles = `
-.navbar {
-  display: flex;
-  background-color: #f0f0f0;
-  padding: 10px;
-}
+    const handleButtonClick = (buttonName) => {
+        setActiveButton(buttonName);
+    };
 
-.nav-button {
-  background: none;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
+    return (
+      <div className="flex space-x-4 pl-14 rounded-lg items-center justify-between">
+        <button 
+          className={`px-4 py-2 ${activeButton === 'Sleep' ? 'bg-black text-white' : 'text-gray-700'} rounded-lg`} 
+          onClick={() => handleButtonClick('Sleep')}
+        >
+          Sleep
+        </button>
+        <button 
+          className={`px-4 py-2 ${activeButton === 'Stress' ? 'bg-black text-white' : 'text-gray-700'} rounded-lg`} 
+          onClick={() => handleButtonClick('Stress')}
+        >
+          Stress
+        </button>
+        <button 
+          className={`px-4 py-2 ${activeButton === 'Emotions' ? 'bg-black text-white' : 'text-gray-700'} rounded-lg`} 
+          onClick={() => handleButtonClick('Emotions')}
+        >
+          Emotions
+        </button>
+        <button 
+          className={`px-4 py-2 ${activeButton === 'Anxiety' ? 'bg-black text-white' : 'text-gray-700'} rounded-lg`} 
+          onClick={() => handleButtonClick('Anxiety')}
+        >
+          Anxiety
+        </button>
+        <button 
+          className={`px-4 py-2 ${activeButton === 'Confidence' ? 'bg-black text-white' : 'text-gray-700'} rounded-lg`} 
+          onClick={() => handleButtonClick('Confidence')}
+        >
+          Confidence
+        </button>
+        <button 
+          className={`px-4 py-2 ${activeButton === 'Connection' ? 'bg-black text-white' : 'text-gray-700'} rounded-lg`} 
+          onClick={() => handleButtonClick('Connection')}
+        >
+          Connection
+        </button>
+        <button 
+          className={`px-4 py-2 ${activeButton === 'Healing' ? 'bg-black text-white' : 'text-gray-700'} rounded-lg`} 
+          onClick={() => handleButtonClick('Healing')}
+        >
+          Healing
+        </button>
+        <button 
+          className={`px-4 py-2 ${activeButton === 'Gratitude' ? 'bg-black text-white' : 'text-gray-700'} rounded-lg`} 
+          onClick={() => handleButtonClick('Gratitude')}
+        >
+          Gratitude
+        </button>
+      </div>
+    )
 }
-
-.nav-button:hover {
-  background-color: #e0e0e0;
-}
-
-.nav-button.active {
-  background-color: #333;
-  color: white;
-}
-`;
 
 export default Selection;
