@@ -31,30 +31,15 @@ const ambientSounds = () => {
           <div className="self-stretch h-[79px] px-2 flex-col justify-center items-center flex">
             <div className="self-stretch justify-center items-start gap-4 inline-flex">
               <div className="grow shrink basis-0 px-2 pt-2 pb-[15px] flex-col justify-center items-center gap-1 inline-flex">
-                <div className="w-[351px] text-center text-[#181d20] text-2xl font-bold font-['Nunito Sans'] leading-[30.72px]">Breath Counting</div>
-                <div className="w-[351px] text-center text-[#646e77] text-sm font-normal font-['Nunito Sans'] leading-[21px]">5-minute calming technique</div>
+                <div className="w-[351px] text-center text-[#181d20] text-2xl font-bold font-['Nunito Sans'] leading-[30.72px]">Ambient Sounds</div>
+                <div className="w-[351px] text-center text-[#646e77] text-sm font-normal font-['Nunito Sans'] leading-[21px]">Immerse yourself in calming ambient sounds like rain whispers to soothe your mind and body.</div>
               </div>
             </div>
           </div>
-          <div className="w-[375px] px-12 justify-center items-center gap-6 inline-flex">
-            <div className="w-6 h-6 relative" />
-            <div className="w-20 h-20 justify-start items-start flex">
-              <div className="w-20 self-stretch p-4 bg-[#ede5ff] rounded-full justify-center items-center gap-2.5 flex">
-                <div className="w-8 h-8 relative">
-                  <img className="w-[26.67px] h-[26.67px] left-[2.67px] top-[2.67px] absolute" src="/pause.svg" />
-                </div>
-              </div>
-            </div>
-            <div className="w-6 h-6 relative origin-top-left rotate-180" />
-          </div>
-          <div className="w-[375px] px-12 py-4 justify-center items-center gap-2 inline-flex">
-            <div className="text-right text-[#646e77] text-xs font-normal font-['Nunito Sans'] leading-none">13:35</div>
-            <div className="w-[207px] h-4 relative">
-              <div className="w-[207px] h-1.5 left-0 top-[5px] absolute bg-[#ccd9e3] rounded" />
-              <img className="w-[140px] h-4 left-0 top-[1px] absolute border border-[#ede5ff]" src="https://via.placeholder.com/140x16" />
-            </div>
-            <div className="text-[#646e77] text-xs font-normal font-['Nunito Sans'] leading-none">15:00</div>
-          </div>
+          <audio controls className="w-[-375px] ">
+            <source src="/light-rain.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
         </div>
       </div>
     </div>
