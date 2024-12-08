@@ -1,8 +1,7 @@
-
-
 import Image from "next/image";
 import Header from "./components/header";
 import Buttons from "./components/buttons";
+import { SignUpButton,SignInButton } from "@clerk/nextjs";
 
 export default function Home() {
 
@@ -20,7 +19,9 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-2 items-center justify-center lg:justify-start">
             <Buttons variant="primary">
-              Get Started
+              <SignUpButton>
+                Get Started
+              </SignUpButton>
             </Buttons>
             <Buttons variant="secondary">
               Learn More
