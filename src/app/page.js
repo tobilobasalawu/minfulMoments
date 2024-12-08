@@ -44,7 +44,7 @@ export default function Home() {
 
         <div className="w-full lg:w-auto px-4 lg:px-0">
           <Image 
-            src="/meditation-transformed.png" 
+            src="/meditation-transformed.svg" 
             alt="meditation" 
             width={500} 
             height={500}
