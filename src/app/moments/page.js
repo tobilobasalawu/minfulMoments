@@ -10,16 +10,8 @@ export default function momentsPage(){
 
   return (
     <div>
-      <Header signInText="Sign Out" SignInButtonComponent={SignOutButton}/>
-      <div>
-        {user ? (
-          <>
-            <Image src={user.profileImageUrl} alt={user.fullName} width={50} height={50} />
-            <span>{user.fullName}</span>
-          </>
-        ) : (
-          <span>Hi, Guest</span>
-        )}
+      <Header signInText="Sign Out" SignInButtonComponent={SignOutButton} headerText={user ? `Hi, ${user.fullName}` : "Welcome, Guest"} imageSrc={user && user.profileImage ? user.profileImage : "/userImage.png"}/>
+      <div className="flex ">
       </div>
     </div>
   )

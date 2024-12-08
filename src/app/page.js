@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div>
-      <Header signInText="Sign In" SignInButtonComponent={SignInButton}/>
+      <Header signInText="Sign In" SignInButtonComponent={SignInButton} headerText="MindfulMoments" imageSrc="/logo.png"/>
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between px-4 lg:pl-20 pt-10 lg:pt-28 lg:gap-20">
         <div className="flex-col max-w-[634px] space-y-6 p-4 lg:p-0">
           <h1 className="text-2xl lg:text-4xl font-bold text-[#1A1A1A] text-center lg:text-left">
