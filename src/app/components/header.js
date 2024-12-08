@@ -1,5 +1,6 @@
 import Buttons from "./buttons";
 import Image from "next/image";
+import { SignInButton } from "@clerk/nextjs";
 
 const Header = () => {
   return (
@@ -13,7 +14,9 @@ const Header = () => {
           Feedback
         </button>
           <Buttons variant="secondary" size="small">
-            Sign In
+            <SignInButton>
+              Sign In
+            </SignInButton>
           </Buttons>
       </div>
     </div>

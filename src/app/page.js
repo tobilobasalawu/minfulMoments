@@ -1,9 +1,22 @@
+'use client'
+
+
 import Image from "next/image";
 import Header from "./components/header";
 import Buttons from "./components/buttons";
-import { SignUpButton,SignInButton } from "@clerk/nextjs";
+import { SignUpButton } from "@clerk/nextjs";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useAuth } from "@clerk/nextjs";
 
 export default function Home() {
+  const { isSignedIn } = useAuth();
+
+  useEffect(() => {
+    if (isSignedIn) {
+      window.location.href = '/moments';
+    }
+  }, [isSignedIn]);
 
   return (
     <div>
