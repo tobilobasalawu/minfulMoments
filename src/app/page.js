@@ -1,9 +1,18 @@
+'use client'
+
 import Image from "next/image";
 import Header from "./components/header";
 import Buttons from "./components/buttons";
 import { SignUpButton } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    router.push("/sign-up");
+  };
+
   return (
     <div>
       <Header />
@@ -17,8 +26,8 @@ export default function Home() {
             Whether you're seeking calm, better sleep, or tools to navigate life's challenges, our short, accessible sessions are designed to help you reconnect with yourself—one moment at a time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-2 items-center justify-center lg:justify-start">
-            <SignUpButton>
-              <Buttons variant="primary">
+            <SignUpButton mode="modal" afterSignUpUrl="/moments">
+              <Buttons variant="primary" onClick={handleGetStarted}>
                 Get Started
               </Buttons>
             </SignUpButton>
