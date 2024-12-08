@@ -13,7 +13,7 @@ export default function momentsPage(){
   const [ambientDuration, setAmbientDuration] = useState(0);
 
   useEffect(() => {
-    const audio = new Audio('/light-rain.mp3');
+    const audio = new Audio('/audio/rain.mp3');
     audio.onloadedmetadata = () => {
       setAmbientDuration(audio.duration);
     };

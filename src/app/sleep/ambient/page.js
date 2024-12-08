@@ -32,12 +32,12 @@ const ambientSounds = () => {
             <div className="self-stretch justify-center items-start gap-4 inline-flex">
               <div className="grow shrink basis-0 px-2 pt-2 pb-[15px] flex-col justify-center items-center gap-1 inline-flex">
                 <div className="w-[351px] text-center text-[#181d20] text-2xl font-bold font-['Nunito Sans'] leading-[30.72px]">Ambient Sounds</div>
-                <div className="w-[351px] text-center text-[#646e77] text-sm font-normal font-['Nunito Sans'] leading-[21px]">Immerse yourself in calming ambient sounds like rain whispers to soothe your mind and body.</div>
+                <div className="w-[300px] text-center text-[#646e77] text-sm font-normal font-['Nunito Sans'] leading-[21px]">Immerse yourself in calming ambient sounds like rain whispers to soothe your mind and body.</div>
               </div>
             </div>
           </div>
           <audio controls className="w-[-375px] ">
-            <source src="/light-rain.mp3" type="audio/mpeg" />
+            <source src="/audio/rain.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
         </div>
