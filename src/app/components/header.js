@@ -2,7 +2,7 @@ import Buttons from "./buttons";
 import Image from "next/image";
 import { SignInButton } from "@clerk/nextjs";
 
-const Header = () => {
+const Header = ({ signInText = "Sign In", SignInButtonComponent = SignInButton }) => {
   return (
     <div className="header flex justify-between items-center px-4 py-2">
       <div className="flex items-center gap-2">
@@ -14,9 +14,9 @@ const Header = () => {
           Feedback
         </button>
           <Buttons variant="secondary" size="small">
-            <SignInButton>
-              Sign In
-            </SignInButton>
+            <SignInButtonComponent>
+              {signInText}
+            </SignInButtonComponent>
           </Buttons>
       </div>
     </div>
