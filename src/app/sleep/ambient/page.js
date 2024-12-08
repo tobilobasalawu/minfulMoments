@@ -2,6 +2,7 @@
 import Header from "../../components/header";
 import { SignOutButton, useUser } from "@clerk/nextjs";
 import Image from "next/image";
+import Buttons from "./components/buttons";
 
 const ambientSounds = () => {
   const { user } = useUser();
@@ -37,9 +38,13 @@ const ambientSounds = () => {
             </div>
           </div>
           <audio controls className="w-[-375px] ">
-            <source src="/audio/rain.mp3" type="audio/mpeg" />
+            <source src="/audio/rain.media" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
+
+          <div>
+
+          </div>
         </div>
       </div>
     </div>
