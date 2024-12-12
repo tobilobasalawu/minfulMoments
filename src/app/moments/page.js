@@ -25,6 +25,13 @@ export default function momentsPage(){
     return `${minutes}m ${seconds}s`; // Format as "Xm Ys"
   };
 
+  // Prepare query parameters for favorites
+  const queryParams = {
+    title: "Into the Presence",
+    time: new Date().toLocaleTimeString(),
+    category: "sleep"
+  };
+
   return (
     <div>
       <Header 
@@ -33,6 +40,8 @@ export default function momentsPage(){
         SignInButtonComponent={SignOutButton} 
         headerText={user ? `Hi, ${user.firstName}` : "Hi, Guest"} 
         imageSrc={user && user.profileImage ? user.profileImage : "/userImage.png"}
+        isSignedIn={true}
+        favouritesLink={`/favourites?title=${encodeURIComponent(queryParams.title)}&time=${encodeURIComponent(queryParams.time)}&category=${encodeURIComponent(queryParams.category)}`}
       />
       <div className="flex pt-5 overflow-x-auto">
         <Selection />
@@ -40,14 +49,29 @@ export default function momentsPage(){
 
       <div className="flex flex-col pt-10 pl-10 mx-5 gap-5">
         <Link href="./sleep/ambient">
-          <Card title={"Ambient Sounds"} duration={formatDuration(ambientDuration)} imageSrc={"/ambient.png"} weight={"full"} height={"206px"} color={"#E7F6FF"}/>
+          <Card 
+            title={"Into the Presence"} 
+            duration={formatDuration(ambientDuration)} 
+            imageSrc={"/ambient.svg"}
+            weight={"full"} 
+            height={"206px"} 
+            color={"#E7F6FF"}
+          />
         </Link>
         <div className="flex pt-5 pl-1 gap-5">
-          <Link href="/" className="w-full">
-            <Card title={"Breath Counting"} duration={"5"} imageSrc={"/mindful.png"} weight={"full"} height={"174px"} color={"#E7F6FF"}/>
+          <Link href="./sleep/breath" className="w-full">
+            <Card title={"Breath Counting"} duration={"5"} imageSrc={"/breathing.svg"} weight={"full"} height={"210px"} color={"#E7F6FF"}/>
           </Link>
-          <Link href="/" className="w-full">
-            <Card title={"Sleep Visualisation"} duration={"10"} imageSrc={"/body.png"} weight={"full"} height={"250px"} color={"#FFE8EC"}/>
+          <Link href="./sleep/visualisation" className="w-full">
+            <Card title={"Sleep Visualisation"} duration={"12"} imageSrc={"/visualisation.svg"} weight={"full"} height={"250px"} color={"#FFE8EC"}/>
+          </Link>
+        </div>
+        <div className="flex pt-5 pl-1 gap-5">
+          <Link href="./sleep/presence" className="w-full">
+            <Card title={"Into the Presence"} duration={"20"} imageSrc={"/presence.svg"} weight={"full"} height={"220px"} color={"#FFE3D3"}/>
+          </Link>
+          <Link href="./sleep/presence" className="w-full">
+            <Card title={"Into the Presence 2"} duration={"20"} imageSrc={"/presence.svg"} weight={"full"} height={"220px"} color={"#FFFACA"}/>
           </Link>
         </div>
       </div>

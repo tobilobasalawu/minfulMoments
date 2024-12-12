@@ -27,7 +27,7 @@ export default function Home() {
             Embark on a Journey to Inner Peace and Resilience
           </h1>
           <p className="text-[#4D4D4D] leading-relaxed text-center lg:text-left">
-            Mindful Moments is your companion for cultivating inner peace and reducing stress, offering guided meditations that fit seamlessly into your day.
+            Mindful Moments is your audio companion for cultivating inner peace and reducing stress, offering guided meditations that fit seamlessly into your day.
             Whether you're seeking calm, better sleep, or tools to navigate life's challenges, our short, accessible sessions are designed to help you reconnect with yourself—one moment at a time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-2 items-center justify-center lg:justify-start">

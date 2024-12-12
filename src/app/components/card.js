@@ -5,6 +5,9 @@ const Card = ({ title, duration, imageSrc, weight, height, color }) => {
         <div className="pt-8">
           <p className="text-l font-semibold pb-3">{title}</p>
           <span className={"bg-[#ffffff] text-gray-800 text-xs font-semibold px-2 py-1 rounded-full"}>{duration} min</span>
+          <div className="flex items-center justify-center">
+            <img src={imageSrc} alt={title} className="w-[85px] h-[auto]" />
+          </div>
         </div>
       </div>
     </div>
