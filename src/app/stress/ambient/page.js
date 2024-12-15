@@ -17,7 +17,7 @@ const ambientSounds = () => {
         username: user.firstName,
         title: title,
         time: new Date().toLocaleTimeString(),
-        entryType: "Breath Count"
+        entryType: "Ambient Sound"
       };
 
       try {
@@ -33,9 +33,9 @@ const ambientSounds = () => {
 
   // Prepare query parameters
   const queryParams = {
-    title: "Breath Count",
+    title: "Ambient Sounds",
     time: new Date().toLocaleTimeString(),
-    entryType: "Breath Count",
+    entryType: "Ambient Sound",
     category: "sleep"
   };
 
@@ -60,7 +60,7 @@ const ambientSounds = () => {
             <div className="w-[231px] h-[231px] left-0 top-0 absolute">
               <div className="w-[231px] h-[231px] p-4 left-0 top-0 absolute justify-center items-center gap-2.5 inline-flex">
                 <div className="grow shrink basis-0 self-stretch px-6 pb-2 bg-[#ede5ff] rounded-[240px] flex-col justify-center items-center gap-2.5 inline-flex">
-                  <Image width={100} height={147} src="/visualisation.svg" />
+                  <Image width={165} height={147} src="/ambient.svg" />
                 </div>
               </div>
               <div className="w-[231px] h-[231px] left-0 top-0 absolute rounded-full border-4 border-[#ede5ff]" />
@@ -69,13 +69,13 @@ const ambientSounds = () => {
           <div className="self-stretch h-[79px] px-2 flex-col justify-center items-center flex">
             <div className="self-stretch justify-center items-start gap-4 inline-flex">
               <div className="grow shrink basis-0 px-2 pt-2 pb-[15px] flex-col justify-center items-center gap-1 inline-flex">
-                <div className="w-[351px] text-center text-[#181d20] text-2xl font-bold font-['Nunito Sans'] leading-[30.72px]">Sleep Visualisation</div>
-                <div className="w-[300px] text-center text-[#646e77] text-sm font-normal font-['Nunito Sans'] leading-[21px]"> Reducing Anxiety and Getting to Sleep by Tara Brach</div>
+                <div className="w-[351px] text-center text-[#181d20] text-2xl font-bold font-['Nunito Sans'] leading-[30.72px]">Ambient Sounds</div>
+                <div className="w-[300px] text-center text-[#646e77] text-sm font-normal font-['Nunito Sans'] leading-[21px]">Immerse yourself in calming ambient sounds like rain whispers to soothe your mind and body.</div>
               </div>
             </div>
           </div>
           <audio controls className="w-[-375px] ">
-            <source src="/audio/Relieving-Anxiety-Getting-Sleep-12min-TaraBrach.mp3" type="audio/mpeg" />
+            <source src="/audio/rain.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
 
