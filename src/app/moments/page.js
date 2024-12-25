@@ -3,34 +3,15 @@
 import Header from "../components/header"
 import { SignOutButton, useUser } from "@clerk/nextjs"
 import Image from "next/image"
-import Selection from "../components/selection"
 import Card from "../components/card"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { BrowserRouter as Router } from "react-router-dom"
 
 export default function momentsPage(){
   const { user } = useUser();
-  const [ambientDuration, setAmbientDuration] = useState(0);
-
-  useEffect(() => {
-    const audio = new Audio('/audio/rain.mp3');
-    audio.onloadedmetadata = () => {
-      setAmbientDuration(audio.duration);
-    };
-  }, []);
-
-  const formatDuration = (duration) => {
-    const minutes = Math.floor(duration / 60);
-    const seconds = Math.floor(duration % 60);
-    return `${minutes}m ${seconds}s`; // Format as "Xm Ys"
-  };
 
   // Prepare query parameters for favorites
-  const queryParams = {
-    title: "Into the Presence",
-    time: new Date().toLocaleTimeString(),
-    category: "sleep"
-  };
 
   return (
     <div>
@@ -41,17 +22,14 @@ export default function momentsPage(){
         headerText={user ? `Hi, ${user.firstName}` : "Hi, Guest"} 
         imageSrc={user && user.profileImage ? user.profileImage : "/userImage.png"}
         isSignedIn={true}
-        favouritesLink={`/favourites?title=${encodeURIComponent(queryParams.title)}&time=${encodeURIComponent(queryParams.time)}&category=${encodeURIComponent(queryParams.category)}`}
+        //favouritesLink={`/favourites?title=${encodeURIComponent(queryParams.title)}&time=${encodeURIComponent(queryParams.time)}&category=${encodeURIComponent(queryParams.category)}`}
       />
-      <div className="flex pt-5 overflow-x-auto items-center ">
-        <Selection />
-      </div>
 
       <div className="flex flex-col pt-10 pl-0 md:pl-0 mx-5 gap-5">
       <Link href="./sleep/ambient" className="w-full flex justify-center "items-center> 
         <Card 
-          title={"Into the Presence"} 
-          duration={formatDuration(ambientDuration)} 
+          title={"Ambient Sounds"} 
+          duration={'9'} 
           imageSrc={"/ambient.svg"}
           weight={"full"} 
           height={"206px"} 
@@ -60,15 +38,15 @@ export default function momentsPage(){
         </Link>
         <div className="flex pt-5 pl-1 gap-5">
           <Link href="./sleep/breath" className="w-full">
-            <Card title={"Breath Counting"} duration={"5"} imageSrc={"/breathing.svg"} weight={"full"} height={"210px"} color={"#E7F6FF"}/>
+            <Card title={"Breath Counting"} duration={"5"} imageSrc={"/breathing.svg"} weight={"full"} height={"280px"} color={"#E7F6FF"}/>
           </Link>
           <Link href="./sleep/visualisation" className="w-full">
             <Card title={"Sleep Visualisation"} duration={"12"} imageSrc={"/visualisation.svg"} weight={"full"} height={"280px"} color={"#FFE8EC"}/>
           </Link>
         </div>
-        <div className="flex pt-5 pl-1 gap-5">
+        <div className="flex pt-1 pl-1 gap-5">
           <Link href="./sleep/presence" className="w-full">
-            <Card title={"Into the Presence"} duration={"20"} imageSrc={"/presence.svg"} weight={"full"} height={"220px"} color={"#FFE3D3"}/>
+            <Card title={"Into the Presence"} duration={"20"} imageSrc={"/presence.svg"} weight={"full"} height={"300px"} color={"#FFE3D3"}/>
           </Link>
           <Link href="./sleep/presence2" className="w-full">
             <Card title={"Into the Presence 2"} duration={"20"} imageSrc={"/presence.svg"} weight={"full"} height={"220px"} color={"#FFFACA"}/>
